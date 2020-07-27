@@ -2,6 +2,7 @@
     height:100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .section{
     background-color: rgb(211, 211, 211);
@@ -13,6 +14,7 @@
     align-items: center;
     justify-content: space-between;
     padding:10px 16px;
+    position: relative;
 }
 
 .image{
@@ -53,11 +55,11 @@
     width:155px;
     opacity: 1;
 }
-.button nav{
+nav{
     position: absolute;
     z-index: 1;
     top:45px;
-    right:0;
+    right:5px;
     width:0px;
     height:0px;
     opacity: 0;
@@ -68,14 +70,14 @@
     box-shadow: 0 0 10px rgb(180, 180, 180);
     transition: all 0.2s ease-in-out;
 }
-.button nav li{
-    width:155px;
+nav li{
     padding:10px 25px;
     padding-right:50px;
     list-style: none;
     text-align: left;
+    white-space: nowrap;
 }
-.button nav li:hover{
+nav li:hover{
     background-color: rgba(221, 221, 221, 0.473);
 }
 svg{
@@ -92,6 +94,19 @@ svg{
     padding:5px 10px;
     align-items: center;
     justify-content: space-between;
+}
+.container.search::after{
+    content:'';
+    position: absolute;
+    bottom:0;
+    left:0;
+    height:1px;
+    width:100%;
+    display: block;
+    background-color: rgba(126, 126, 126, 0.2);
+}
+.container.search:focus-within{
+    box-shadow: 0 2px 3px rgba(139, 139, 139, 0.1);
 }
 .search--container div{
     height:24px;
@@ -184,6 +199,7 @@ svg{
     width:calc(100% - 77px);
     height:100%;
     padding: 0 15px 0 0;
+    position: relative;
 }
 .card-contents .top{
     display: flex;
@@ -257,6 +273,10 @@ svg{
     align-items: center;
 }
 .card:hover .card-contents .bottom .card-icons .icon.angle-down{
+    border: none;
+    outline:0;
+    background-color: transparent;
+    padding:0;
     display: flex;
 }
 .card-contents::after{
@@ -269,4 +289,7 @@ svg{
 }
 .card:hover, .card.active{
     background-color: rgba(221, 221, 221, 0.473);
+}
+#menu{
+    top:40%;
 }

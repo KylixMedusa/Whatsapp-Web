@@ -12,4 +12,13 @@ export class AllChannelsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openmenu(event){
+    var node = document.getElementById('menu');
+    var top  = event.srcElement.parentElement.parentElement.parentElement.parentElement.offsetTop + 60;
+    node.style.top = String(top)+"px";
+    node.style.left = "calc(100% - 40px)";
+    node.style.width = "max-content";
+    node.style.height = "max-content";
+    node.style.opacity = '1';
+  }
 }
